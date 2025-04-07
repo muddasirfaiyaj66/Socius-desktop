@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="600.0" prefWidth="800.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- Welcome Panel -->
+    <VBox fx:id="welcomePanel" alignment="CENTER" prefWidth="400.0" spacing="20.0" styleClass="welcome-panel" HBox.hgrow="ALWAYS">
+
+        <Label styleClass="welcome-header" text="Socius">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+
+        <Label styleClass="welcome-text" text="Connect with friends and the world around you." textAlignment="CENTER" wrapText="true">
+            <VBox.margin>
+                <Insets left="30.0" right="30.0" />
+            </VBox.margin>
+        </Label>
+
+        <ImageView fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/Images/11905926_4860253-removebg-preview.png" />
+            </image>
+        </ImageView>
+    </VBox>
+
+    <!-- Login Panel -->
+    <VBox fx:id="loginPanel" alignment="CENTER" prefWidth="400.0" spacing="10.0" styleClass="login-panel" HBox.hgrow="ALWAYS">
+
+        <ImageView fitHeight="98.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/logo/logoBig.png" />
+            </image>
+        </ImageView>
+
+        <Label styleClass="header-label" text="Welcome to Socius">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <Label styleClass="subheader-label" text="Sign in to continue" />
+
+        <TextField fx:id="loginEmailField" promptText="Email" styleClass="input-field">
+            <VBox.margin>
+                <Insets left="50.0" right="50.0" />
+            </VBox.margin>
+        </TextField>
+
+        <PasswordField fx:id="loginPasswordField" promptText="Password" styleClass="input-field">
+            <VBox.margin>
+                <Insets left="50.0" right="50.0" />
+            </VBox.margin>
+        </PasswordField>
+
+        <Button fx:id="loginButton" mnemonicParsing="false" styleClass="primary-button" text="Sign In">
+            <VBox.margin>
+                <Insets left="50.0" right="50.0" />
+            </VBox.margin>
+        </Button>
+
+        <HBox alignment="CENTER">
+            <children>
+                <Label text="Don't have an account?" />
+                <Hyperlink fx:id="registerLink" text="Sign Up" />
+            </children>
+        </HBox>
+
+        <Hyperlink text="Forgot Password?" />
+    </VBox>
+</HBox>
