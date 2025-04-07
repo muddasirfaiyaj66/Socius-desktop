@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane fx:id="mainBorderPane" prefHeight="768.0" prefWidth="1024.0" styleClass="home-background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox alignment="CENTER" prefHeight="60.0" styleClass="top-bar">
+            <children>
+                <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <ImageView fx:id="logoImage" fitHeight="47.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/logo/logoBig.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets left="15.0" right="10.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="appNameLabel" styleClass="app-name" text="Socius">
+                            <HBox.margin>
+                                <Insets right="20.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="searchField" promptText="Search..." styleClass="search-field" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets right="20.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <children>
+                        <Button fx:id="notificationButton" mnemonicParsing="false" styleClass="icon-button">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/notification.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="messageButton" mnemonicParsing="false" styleClass="icon-button">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/message.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <MenuButton fx:id="profileMenuButton" mnemonicParsing="false" styleClass="profile-menu-button">
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/profile.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Profile" />
+                                <MenuItem mnemonicParsing="false" text="Settings" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem mnemonicParsing="false" text="Logout" />
+                            </items>
+                        </MenuButton>
+                    </children>
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <ScrollPane fx:id="leftSidebarScroll" fitToWidth="true" hbarPolicy="NEVER" styleClass="transparent-scroll-pane">
+            <content>
+                <VBox fx:id="leftSidebar" prefHeight="397.0" prefWidth="151.0" styleClass="side-nav">
+                    <children>
+                        <Button fx:id="homeButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="nav-button, active-nav-button" text="Home">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/icons8-home.gif" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="5.0" top="15.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="profileButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="nav-button" text="Profile">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/icons8-male-user.gif" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="friendsButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="nav-button" text="Friends">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/icons8-friends-64.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="messagesButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="nav-button" text="Messages">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/icons8-comment.gif" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="notificationsButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="nav-button" text="Notifications">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/icons8-notification-64.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="settingsButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="nav-button" text="Settings">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/icons/icons8-settings.gif" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Separator>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </VBox.margin>
+                        </Separator>
+                        <Label styleClass="section-label" text="Shortcuts">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="15.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="shortcut-button" text="Group 1">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="shortcut-button" text="Group 2">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="shortcut-button" text="Event 1">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </left>
+    <center>
+        <ScrollPane fx:id="contentScrollPane" fitToWidth="true" hbarPolicy="NEVER" styleClass="content-area">
+            <content>
+                <VBox fx:id="contentVBox" spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <!-- Create Post Area -->
+                        <VBox styleClass="post-create-card">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons/profile.png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="postTextField" promptText="What's on your mind?" styleClass="post-input" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <Separator />
+                                <HBox fx:id="postActionsBox" alignment="CENTER" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="photoButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="post-action-button" text="Photo/Video" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-photo.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="feelingButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="post-action-button" text="Feeling/Activity" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-uwu-emoji.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="checkInButton" maxWidth="Infinity" mnemonicParsing="false" styleClass="post-action-button" text="Check In" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-location.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+
+                        <!-- Sample Posts -->
+                        <VBox styleClass="post-card">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons/profile.png" />
+                                            </image>
+                                        </ImageView>
+                                        <VBox>
+                                            <children>
+                                                <Label styleClass="post-author" text="Jane Smith" />
+                                                <Label styleClass="post-time" text="2 hours ago" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <Label styleClass="post-content" text="Just launched my new project! Check it out and let me know what you think." wrapText="true">
+                                    <VBox.margin>
+                                        <Insets bottom="15.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Separator />
+                                <HBox alignment="CENTER" spacing="30.0">
+                                    <children>
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="post-interaction-button" text="Like" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-like.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="post-interaction-button" text="Comment" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-comment.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="post-interaction-button" text="Share" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-share.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+
+                        <VBox styleClass="post-card">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons/profile.png" />
+                                            </image>
+                                        </ImageView>
+                                        <VBox>
+                                            <children>
+                                                <Label styleClass="post-author" text="John Doe" />
+                                                <Label styleClass="post-time" text="5 hours ago" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <Label styleClass="post-content" text="Beautiful day for a hike! Nature is truly amazing. #outdoors #adventure" wrapText="true">
+                                    <VBox.margin>
+                                        <Insets bottom="15.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <ImageView fx:id="postImage" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/Images/4213.jpg" />
+                                    </image>
+                                    <VBox.margin>
+                                        <Insets bottom="15.0" />
+                                    </VBox.margin>
+                                </ImageView>
+                                <Separator />
+                                <HBox alignment="CENTER" spacing="30.0">
+                                    <children>
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="post-interaction-button" text="Like" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-like.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="post-interaction-button" text="Comment" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-comment.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="post-interaction-button" text="Share" HBox.hgrow="ALWAYS">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../assets/icons/icons8-share.gif" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <right>
+        <ScrollPane fx:id="rightSidebarScroll" fitToWidth="true" hbarPolicy="NEVER" styleClass="transparent-scroll-pane">
+            <content>
+                <VBox fx:id="rightSidebar" prefHeight="498.0" prefWidth="249.0" styleClass="right-sidebar">
+                    <children>
+                        <Label styleClass="section-label" text="Friend Requests">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="15.0" top="15.0" />
+                            </VBox.margin>
+                        </Label>
+                        <VBox styleClass="friend-request-card">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons/profile.png" />
+                                            </image>
+                                        </ImageView>
+                                        <VBox HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label styleClass="friend-name" text="Emily Davis" />
+                                                <Label styleClass="mutual-friends" text="3 mutual friends" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="accept-button" text="Accept" HBox.hgrow="ALWAYS" />
+                                        <Button maxWidth="Infinity" mnemonicParsing="false" styleClass="decline-button" text="Decline" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+
+                        <Separator>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="15.0" />
+                            </VBox.margin>
+                        </Separator>
+
+                        <Label styleClass="section-label" text="Online Friends">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="15.0" />
+                            </VBox.margin>
+                        </Label>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="online-friend">
+                            <children>
+                                <StackPane>
+                                    <children>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons/profile.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Circle fill="GREEN" radius="5.0" StackPane.alignment="BOTTOM_RIGHT" />
+                                    </children>
+                                </StackPane>
+                                <Label text="Alex Johnson" />
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                            </padding>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="online-friend">
+                            <children>
+                                <StackPane>
+                                    <children>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons/profile.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Circle fill="GREEN" radius="5.0" StackPane.alignment="BOTTOM_RIGHT" />
+                                    </children>
+                                </StackPane>
+                                <Label text="Sarah Williams" />
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                            </padding>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="online-friend">
+                            <children>
+                                <StackPane>
+                                    <children>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons/profile.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Circle fill="GREEN" radius="5.0" StackPane.alignment="BOTTOM_RIGHT" />
+                                    </children>
+                                </StackPane>
+                                <Label text="Michael Brown" />
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                            </padding>
+                        </HBox>
+
+                        <Separator>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="15.0" />
+                            </VBox.margin>
+                        </Separator>
+
+                        <Label styleClass="section-label" text="Upcoming Events">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="15.0" />
+                            </VBox.margin>
+                        </Label>
+
+                        <VBox styleClass="event-card">
+                            <children>
+                                <Label styleClass="event-title" text="Tech Meetup" />
+                                <Label styleClass="event-date" text="Saturday, 15 April 2023" />
+                                <Label styleClass="event-location" text="Downtown Conference Center" />
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </right>
+</BorderPane>
