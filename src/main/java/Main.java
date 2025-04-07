@@ -34,7 +34,7 @@ public class Main extends Application {
 
         // Configure the stage
         primaryStage.setTitle("Socius");
-        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("./assets/logo/logo.png"))));
+        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("./assets/logo/logoDarkBig.png"))));
         primaryStage.setScene(scene);
 
         // Enable full screen mode
