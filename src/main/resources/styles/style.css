@@ -317,6 +317,11 @@
     -fx-text-fill: white;
     -fx-background-radius: 5px;
     -fx-max-width: infinity;
+}.post-button {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-max-width: infinity;
 }
 
 .decline-button {

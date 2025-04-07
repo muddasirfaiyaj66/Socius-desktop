@@ -214,7 +214,8 @@
                                                 <Image url="@../assets/icons/profile.png" />
                                             </image>
                                         </ImageView>
-                                        <TextField fx:id="postTextField" promptText="What's on your mind?" styleClass="post-input" HBox.hgrow="ALWAYS" />
+                                        <TextField fx:id="postTextField" prefHeight="25.0" prefWidth="452.0" promptText="What's on your mind?" styleClass="post-input" HBox.hgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" styleClass="post-button" text="Post" />
                                     </children>
                                     <VBox.margin>
                                         <Insets bottom="10.0" />

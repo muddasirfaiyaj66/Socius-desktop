@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Load the main view (HomeView.fxml)
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("./view/LoginView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("./view/HomeView.fxml"));
         Parent root = loader.load();
 
        
@@ -34,7 +34,7 @@ public class Main extends Application {
 
         // Configure the stage
         primaryStage.setTitle("Socius");
-        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("./assets/logo/logo.png"))));
+        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("./assets/logo/logoDarkBig.png"))));
         primaryStage.setScene(scene);
 
         // Enable full screen mode
